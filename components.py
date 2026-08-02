@@ -4,19 +4,16 @@ import os
 
 TODO_FILE = "todo_list.json"
 
-def load_tasks():
-    """Load tasks from the JSON file. Return an empty list if file doesn't exist."""
+def load_tasks():    
     if not os.path.exists(TODO_FILE):
         return []
     try:
         with open(TODO_FILE, "r") as file:
             return json.load(file)
-    except json.JSONDecodeError:
-        # Handle cases where the file might be corrupted or empty
+    except json.JSONDecodeError:        
         return []
 
-def save_tasks(tasks):
-    """Save the current list of tasks to the JSON file."""
+def save_tasks(tasks):    
     with open(TODO_FILE, "w") as file:
         json.dump(tasks, file, indent=4)
 

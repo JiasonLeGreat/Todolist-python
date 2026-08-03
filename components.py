@@ -20,10 +20,10 @@ def save_tasks(tasks):
 
 def menu():
     print("1. Checklist")
-    print("2. Add task")
+    print("2. Add a task")
     print("3. Check a task as completed")
-    print("4. Delete")
-    print("5. Exit")
+    print("4. Delete a task")
+    print("5. Exit the app")
 
 def view_task(tasks): 
     if not tasks:

@@ -32,7 +32,7 @@ def view_task(tasks):
                
     print("\nYour tasks:")
     for index, task in enumerate(tasks, start=1):
-        status = "✅ " if task["done"] else "Pending..."
+        status = "✅ " if task['done'] else "Pending..."
         print(f"{index} {task['task']} [{status}]")
 
 def add_task(tasks):
@@ -59,7 +59,7 @@ def mark_done(tasks):
         print("Please enter a valid number ")
 
 def delete_task(tasks):
-    view_task()
+    view_task(tasks)
     if not tasks:
         return
     try:
@@ -67,7 +67,7 @@ def delete_task(tasks):
         if 0 <= index < len(tasks):
             removed = tasks.pop(index)
             save_tasks(tasks)
-            print(f"Task deleted: {removed["task"]}")
+            print(f"Task deleted: {removed['task']}")
         else:
             print("Invalid number")
     except ValueError:

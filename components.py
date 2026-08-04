@@ -65,20 +65,20 @@ def delete_task(tasks):
     try:
         index = int(input("Enter the task number to remove: ")) -1
         if 0 <= index < len(tasks):
-            print("Are you sure you want to delete?")
-            choice = input("Press 1 to continue and 2 to go back")
+            print("Are you sure you want to delete? ")
+            choice = input("Type yes to continue and no to go back: ").lower()
             try:
-                if choice == '1':
+                if choice == 'yes':
                      removed = tasks.pop(index)
                      save_tasks(tasks)
                      print(f"Task deleted: {removed['task']}")
-                elif choice == '2':
+                elif choice == 'no':
                      return
                 else:
-                    print("Invalid number")
+                    print("Invalid response")
             except ValueError:
-                print("Please enter a valid number")
+                print("Please enter the correct word")
         else:
-            print("Invalid number")
+            print("Invalid")
     except ValueError:
-        print("Please enter a valid number")
+        print("Please enter a valid response")

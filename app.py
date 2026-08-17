@@ -9,7 +9,7 @@ def todo_app():
         if count == 0:
             print("Welcome to you!")
             menu()
-            count =+ 1
+            count += 1
 
         else:
             menu()
